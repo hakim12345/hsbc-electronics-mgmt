@@ -21,4 +21,7 @@ public interface ElectronicsRepository extends JpaRepository<ElectronicsMst, Int
 
     @Query("select e from ElectronicsMst e where e.category= :category ORDER BY e.price ASC")
     List<ElectronicsMst> fetchDiscountedProduct(String category);
+
+    @Query("select e from ElectronicsMst e where e.product= :product")
+    ElectronicsMst fetchByProduct(String product);
 }

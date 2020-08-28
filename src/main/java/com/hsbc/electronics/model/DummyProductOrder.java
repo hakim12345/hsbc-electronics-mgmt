@@ -1,38 +1,50 @@
-package com.hsbc.electronics.model.pojo;
+package com.hsbc.electronics.model;
 
-public class ElectronicsMstDTO {
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "DummyProductOrder")
+public class DummyProductOrder {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "dummyProductOrder_id")
     private Integer id;
 
+    @Column(name = "category", nullable = false)
     private String category;
 
+    @Column(name = "company", nullable = false)
     private String company;
 
+    @Column(name = "product", nullable = false)
     private String product;
 
+    @Column(name = "color", nullable = false)
     private String color;
 
+    @Column(name = "description", nullable = false)
     private String description;
 
-    private Double price;
+    @Column(name = "numberOfOrder", nullable = false)
+    private Integer numberOfOrder;
 
-    private Double discount;
+    @Column(name = "orderStatus", nullable = false)
+    private Boolean orderStatus;
 
-    private Integer ItemsInStock;
-
-    public ElectronicsMstDTO() {
+    public DummyProductOrder() {
     }
 
-    public ElectronicsMstDTO(Integer id, String category, String company, String product, String color, String description, Double price, Double discount, Integer itemsInStock) {
+    public DummyProductOrder(Integer id, String category, String company, String product, String color, String description, Integer numberOfOrder, Boolean orderStatus) {
         this.id = id;
         this.category = category;
         this.company = company;
         this.product = product;
         this.color = color;
         this.description = description;
-        this.price = price;
-        this.discount = discount;
-        ItemsInStock = itemsInStock;
+        this.numberOfOrder = numberOfOrder;
+        this.orderStatus = orderStatus;
     }
 
     public Integer getId() {
@@ -83,27 +95,19 @@ public class ElectronicsMstDTO {
         this.description = description;
     }
 
-    public Double getPrice() {
-        return price;
+    public Integer getNumberOfOrder() {
+        return numberOfOrder;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setNumberOfOrder(Integer numberOfOrder) {
+        this.numberOfOrder = numberOfOrder;
     }
 
-    public Double getDiscount() {
-        return discount;
+    public Boolean getOrderStatus() {
+        return orderStatus;
     }
 
-    public void setDiscount(Double discount) {
-        this.discount = discount;
-    }
-
-    public Integer getItemsInStock() {
-        return ItemsInStock;
-    }
-
-    public void setItemsInStock(Integer itemsInStock) {
-        ItemsInStock = itemsInStock;
+    public void setOrderStatus(Boolean orderStatus) {
+        this.orderStatus = orderStatus;
     }
 }

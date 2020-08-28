@@ -33,12 +33,12 @@ public class ElectronicsMst {
     private Double discount;
 
     @Column(name = "items_in_stock", nullable = false)
-    private String ItemsInStock;
+    private Integer ItemsInStock;
 
     public ElectronicsMst() {
     }
 
-    public ElectronicsMst(Integer id, String category, String company, String product, String color, String description, Double price, Double discount, String itemsInStock) {
+    public ElectronicsMst(Integer id, String category, String company, String product, String color, String description, Double price, Double discount, Integer itemsInStock) {
         this.id = id;
         this.category = category;
         this.company = company;
@@ -114,11 +114,11 @@ public class ElectronicsMst {
         this.discount = discount;
     }
 
-    public String getItemsInStock() {
+    public Integer getItemsInStock() {
         return ItemsInStock;
     }
 
-    public void setItemsInStock(String itemsInStock) {
+    public void setItemsInStock(Integer itemsInStock) {
         ItemsInStock = itemsInStock;
     }
 }
