@@ -55,7 +55,7 @@ public class DummyOrderServiceImpl implements DummyOrderService {
        if (dummyProductOrder.getOrderStatus().equals(true)) {
            dummyProductOrder.setOrderStatus(false);
            dummyOrderRepository.save(dummyProductOrder);
-           result.put("delete", "Vehicle having delete successfully");
+           result.put("delete", "Dummy request having delete successfully");
            return result;
        } else {
            throw new EntityNotFoundException(messageSource.getMessage(ErrorCode.Electronics.DUMMY_ORDER_DELETE,
