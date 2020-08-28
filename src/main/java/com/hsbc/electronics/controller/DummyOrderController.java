@@ -21,7 +21,7 @@ public class DummyOrderController extends BaseController{
     @Autowired
     private DummyOrderService dummyOrderService;
 
-    @ApiOperation("Create Electronics")
+    @ApiOperation("Create Dummy request")
     @PostMapping( value = UrlConstants.DUMMY_ORDER_CREATE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Map<String, Object>> create(@RequestBody final DummyProductOrderDTO dummyProductOrderDTO){
         DummyProductOrder dummyProductOrder = convertToEntity(dummyProductOrderDTO);
@@ -33,7 +33,7 @@ public class DummyOrderController extends BaseController{
         return ResponseEntity.ok(response);
     }
 
-    @ApiOperation("delete Vehicle")
+    @ApiOperation("delete Dummy Request")
     @DeleteMapping(value = UrlConstants.DELETE_DUMMY_ORDER, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Map<String, Object>> deleteDummyOrder(@RequestParam("id") final Integer id){
 
